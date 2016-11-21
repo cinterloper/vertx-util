@@ -2,7 +2,7 @@ apply plugin: 'java'
 // Uncomment below when doing official builds
 // apply from: "gradle/sona.gradle"
 
-version = '3.3.0'
+version = '3.3.3'
 group = "com.cyngn.vertx"
 archivesBaseName = "vertx-util"
 
@@ -21,17 +21,17 @@ repositories {
 }
 
 dependencies {
-    compile 'io.vertx:vertx-core:3.3.0-SNAPSHOT'
-    compile 'io.vertx:vertx-web:3.3.0-SNAPSHOT'
-    compile "io.vertx:vertx-codegen:3.3.0-SNAPSHOT"
+    compile 'io.vertx:vertx-core:3.3.3'
+    compile 'io.vertx:vertx-web:3.3.3'
+    compile "io.vertx:vertx-codegen:3.3.3"
     compile 'org.slf4j:slf4j-api:1.7.7'
     compile 'commons-lang:commons-lang:2.6'
     compile 'javax.ws.rs:javax.ws.rs-api:2.0.1'
     compile "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.6.1"
     testCompile "junit:junit:4.11"
-    testCompile "io.vertx:vertx-unit:3.3.0-SNAPSHOT"
-    testCompile 'io.vertx:vertx-web:3.3.0-SNAPSHOT:tests'
-    testCompile 'io.vertx:vertx-core:3.3.0-SNAPSHOT:tests'
+    testCompile "io.vertx:vertx-unit:3.3.3"
+    testCompile 'io.vertx:vertx-web:3.3.3:tests'
+    testCompile 'io.vertx:vertx-core:3.3.3:tests'
 }
 
 task wrapper(type: Wrapper) {
@@ -42,7 +42,7 @@ task release() << {}
 
 gradle.taskGraph.whenReady {taskGraph ->
     if (!taskGraph.hasTask(release)) {
-        version += '-SNAPSHOT'
+        version += ''
     }
 }
 
